@@ -221,11 +221,3 @@ From covid_deaths
 -- Where location like '%states%'
 Group by location, Population
 order by PercentPopulationInfected desc
-
--- Table 4
-use covid
-Select Location, Population,date, MAX(total_cases) as HighestInfectionCount,  Max((total_cases/population))*100 as PercentPopulationInfected
-From covid_deaths
-Where location is not null
-Group by Location, Population, date
-order by PercentPopulationInfected desc
